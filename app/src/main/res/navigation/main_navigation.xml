@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/itemHome">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/itemHome"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
@@ -24,12 +24,12 @@
             app:destination="@id/vaccineFragment" />
     </fragment>
     <fragment
-        android:id="@+id/statistikFragment"
+        android:id="@+id/itemStats"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.StatistikFragment"
         android:label="fragment_statistik"
         tools:layout="@layout/fragment_statistik" />
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/itemProfile"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
@@ -47,7 +47,7 @@
         tools:layout="@layout/fragment_profile_detail" >
         <action
             android:id="@+id/action_profileDetailFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/itemProfile" />
     </fragment>
     <fragment
         android:id="@+id/infoFragment"
@@ -56,7 +56,7 @@
         tools:layout="@layout/fragment_info" >
         <action
             android:id="@+id/action_infoFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/itemHome" />
     </fragment>
     <fragment
         android:id="@+id/digitalPasportFragment"
@@ -65,7 +65,7 @@
         tools:layout="@layout/fragment_digital_pasport" >
         <action
             android:id="@+id/action_digitalPasportFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/itemHome" />
     </fragment>
     <fragment
         android:id="@+id/doctorTeleFragment"
@@ -74,7 +74,7 @@
         tools:layout="@layout/fragment_doctor_tele" >
         <action
             android:id="@+id/action_doctorTeleFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/itemHome" />
     </fragment>
     <fragment
         android:id="@+id/vaccineFragment"
@@ -83,7 +83,7 @@
         tools:layout="@layout/fragment_vaccine" >
         <action
             android:id="@+id/action_vaccineFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/itemHome" />
     </fragment>
     <activity
         android:id="@+id/loginActivity"
