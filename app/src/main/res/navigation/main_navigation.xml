@@ -11,23 +11,33 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_infoFragment"
-            app:destination="@id/infoFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_digitalPasportFragment"
             app:destination="@id/digitalPasportFragment" />
         <action
             android:id="@+id/action_homeFragment_to_doctorTeleFragment"
             app:destination="@id/doctorTeleFragment" />
         <action
+            android:id="@+id/action_homeFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+        <action
             android:id="@+id/action_homeFragment_to_vaccineFragment"
             app:destination="@id/vaccineFragment" />
     </fragment>
     <fragment
-        android:id="@+id/itemStats"
-        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.StatistikFragment"
-        android:label="fragment_statistik"
-        tools:layout="@layout/fragment_statistik" />
+        android:id="@+id/digitalPasportFragment"
+        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DigitalPasportFragment"
+        android:label="fragment_digital_pasport"
+        tools:layout="@layout/fragment_digital_pasport" />
+    <fragment
+        android:id="@+id/doctorTeleFragment"
+        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DoctorTeleFragment"
+        android:label="fragment_doctor_tele"
+        tools:layout="@layout/fragment_doctor_tele" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
     <fragment
         android:id="@+id/itemProfile"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ProfileFragment"
@@ -37,8 +47,8 @@
             android:id="@+id/action_profileFragment_to_profileDetailFragment"
             app:destination="@id/profileDetailFragment" />
         <action
-            android:id="@+id/action_profileFragment_to_loginActivity"
-            app:destination="@id/loginActivity" />
+            android:id="@+id/action_profileFragment_to_QRCodeFragment"
+            app:destination="@id/QRCodeFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileDetailFragment"
@@ -46,36 +56,19 @@
         android:label="fragment_profile_detail"
         tools:layout="@layout/fragment_profile_detail" >
         <action
-            android:id="@+id/action_profileDetailFragment_to_profileFragment"
-            app:destination="@id/itemProfile" />
+            android:id="@+id/action_profileDetailFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
+    <dialog
+        android:id="@+id/QRCodeFragment"
+        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.QRCodeFragment"
+        android:label="fragment_q_r_code"
+        tools:layout="@layout/fragment_q_r_code" />
     <fragment
-        android:id="@+id/infoFragment"
-        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.InfoFragment"
-        android:label="fragment_info"
-        tools:layout="@layout/fragment_info" >
-        <action
-            android:id="@+id/action_infoFragment_to_homeFragment"
-            app:destination="@id/itemHome" />
-    </fragment>
-    <fragment
-        android:id="@+id/digitalPasportFragment"
-        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DigitalPasportFragment"
-        android:label="fragment_digital_pasport"
-        tools:layout="@layout/fragment_digital_pasport" >
-        <action
-            android:id="@+id/action_digitalPasportFragment_to_homeFragment"
-            app:destination="@id/itemHome" />
-    </fragment>
-    <fragment
-        android:id="@+id/doctorTeleFragment"
-        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DoctorTeleFragment"
-        android:label="fragment_doctor_tele"
-        tools:layout="@layout/fragment_doctor_tele" >
-        <action
-            android:id="@+id/action_doctorTeleFragment_to_homeFragment"
-            app:destination="@id/itemHome" />
-    </fragment>
+        android:id="@+id/itemStats"
+        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.StatistikFragment"
+        android:label="fragment_statistik"
+        tools:layout="@layout/fragment_statistik" />
     <fragment
         android:id="@+id/vaccineFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.VaccineFragment"
