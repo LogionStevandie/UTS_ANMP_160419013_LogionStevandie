@@ -1,12 +1,54 @@
 package id.ac.ubaya.informatika.a160419013_vaccinecovid19.view
 
+import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        btnVerifikasi.setOnClickListener {
+            if (txtNomorHp.text.toString() == ""){
+                AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage("Harap isi Nomor Telepon!")
+                    .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i ->
+                        txtNomorHp.requestFocus()
+                    })
+                    .show()
+            }
+            else{
+                AlertDialog.Builder(this)
+                    .setTitle("Berhasil")
+                    .setMessage("Kode Verifikasi: 123456")
+                    .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i ->
+                        txtKodeVerifikasi.requestFocus()
+                    })
+                    .show()
+            }
+
+        }
+
+        btnLogin.setOnClickListener {
+            if (txtKodeVerifikasi.text.toString() != "123456"){
+                AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage("Harap isi Kode Verifikasi dengan benar!")
+                    .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i ->
+                        txtKodeVerifikasi.requestFocus()
+                    })
+                    .show()
+            }
+            else{
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }
