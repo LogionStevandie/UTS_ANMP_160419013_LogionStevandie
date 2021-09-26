@@ -26,5 +26,10 @@ class ProfileFragment : Fragment() {
             val action = ProfileFragmentDirections.actionProfileFragmentToQRCodeFragment()
             Navigation.findNavController(it).navigate(action)
         }
+
+        fabEdit.setOnClickListener {
+            val action = ProfileFragmentDirections.actionProfileFragmentToProfileDetailFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 }

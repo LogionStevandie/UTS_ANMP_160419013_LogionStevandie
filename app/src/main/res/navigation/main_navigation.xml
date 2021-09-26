@@ -57,7 +57,12 @@
         tools:layout="@layout/fragment_profile_detail" >
         <action
             android:id="@+id/action_profileDetailFragment_to_loginActivity"
-            app:destination="@id/loginActivity" />
+            app:destination="@id/loginActivity"
+            app:popUpTo="@id/loginActivity" />
+        <action
+            android:id="@+id/action_profileDetailFragment_to_itemProfile"
+            app:destination="@id/itemProfile"
+            app:popUpTo="@id/itemProfile" />
     </fragment>
     <dialog
         android:id="@+id/QRCodeFragment"
@@ -76,7 +81,8 @@
         tools:layout="@layout/fragment_vaccine" >
         <action
             android:id="@+id/action_vaccineFragment_to_homeFragment"
-            app:destination="@id/itemHome" />
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome" />
     </fragment>
     <activity
         android:id="@+id/loginActivity"
