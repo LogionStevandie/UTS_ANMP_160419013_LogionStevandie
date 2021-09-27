@@ -49,16 +49,16 @@
         <action
             android:id="@+id/action_profileFragment_to_QRCodeFragment"
             app:destination="@id/QRCodeFragment" />
+        <action
+            android:id="@+id/action_itemProfile_to_loginActivity"
+            app:destination="@id/loginActivity"
+            app:popUpTo="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/profileDetailFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ProfileDetailFragment"
         android:label="fragment_profile_detail"
         tools:layout="@layout/fragment_profile_detail" >
-        <action
-            android:id="@+id/action_profileDetailFragment_to_loginActivity"
-            app:destination="@id/loginActivity"
-            app:popUpTo="@id/loginActivity" />
         <action
             android:id="@+id/action_profileDetailFragment_to_itemProfile"
             app:destination="@id/itemProfile"
