@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.viewmodel.CityHomeListViewModel
@@ -42,6 +43,21 @@ class HomeFragment : Fragment() {
         }
 
         observeViewModel()
+
+        btnVaksin.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToVaccineFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+
+        btnPasport.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDigitalPasportFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+
+        btnInfo.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToInfoFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     fun  observeViewModel(){
