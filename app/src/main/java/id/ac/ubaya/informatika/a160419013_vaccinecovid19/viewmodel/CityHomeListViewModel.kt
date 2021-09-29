@@ -15,9 +15,6 @@ class CityHomeListViewModel(application: Application): AndroidViewModel(applicat
     val loadingErrorHomeLD = MutableLiveData<Boolean>()
     val loadingHomeLD = MutableLiveData<Boolean>()
 
-    /*private val TAG = "volleyTag"
-    private var queue: RequestQueue?= null
-*/
     fun refresh(){
         val city1 = City("1","Xiongchi","Tinggi","578","82","394","386")
 
@@ -34,7 +31,5 @@ class CityHomeListViewModel(application: Application): AndroidViewModel(applicat
         cityHomeLD.value = arrayListOf<City>(city1, city2, city3, city4, city5, city6)
         loadingErrorHomeLD.value = false
         loadingHomeLD.value = false
-
-
     }
 }

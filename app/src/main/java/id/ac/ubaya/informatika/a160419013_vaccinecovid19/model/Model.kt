@@ -9,3 +9,17 @@ data class City(
     val sembuh:String?,
     val meninggal:String?
 )
+
+data class Info(
+        val id:String?,
+        val name:String?,
+        val tanggal:String?,
+        val isi:String?
+)
+
+data class Dokter(
+    val id:String?,
+    val name:String?,
+    val bidang:String?,
+    val foto:String?
+)
