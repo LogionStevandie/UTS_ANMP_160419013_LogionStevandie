@@ -59,10 +59,10 @@ class DoctorTeleFragment : Fragment() {
         viewModel.loadingDokterLD.observe(viewLifecycleOwner, Observer {
             if(it){
                 progressBarDokter.visibility = View.VISIBLE
-                recyclerViewInfo.visibility = View.GONE
+                RecyclerViewDokter.visibility = View.GONE
             }else{
                 progressBarDokter.visibility = View.GONE
-                recyclerViewInfo.visibility = View.VISIBLE
+                RecyclerViewDokter.visibility = View.VISIBLE
             }
         })
 

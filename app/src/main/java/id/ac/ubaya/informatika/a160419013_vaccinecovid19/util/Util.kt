@@ -11,7 +11,7 @@ import java.lang.Exception
 fun ImageView.loadImage(url:String, progressBar: ProgressBar){
     Picasso.get()
         .load(url)
-        .resize(400,400)
+        .resize(100,100)
         .centerCrop()
         .error(R.drawable.ic_baseline_error_24)
         .into(this, object: Callback {

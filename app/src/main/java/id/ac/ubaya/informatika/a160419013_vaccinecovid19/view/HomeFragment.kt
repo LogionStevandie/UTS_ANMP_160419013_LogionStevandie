@@ -58,6 +58,11 @@ class HomeFragment : Fragment() {
             val action = HomeFragmentDirections.actionHomeFragmentToInfoFragment()
             Navigation.findNavController(it).navigate(action)
         }
+
+        btnDoctor.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDoctorTeleFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     fun  observeViewModel(){

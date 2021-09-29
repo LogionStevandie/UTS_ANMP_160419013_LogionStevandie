@@ -44,7 +44,7 @@ class DokterListAdapter(val dokterList:ArrayList<Dokter>): RecyclerView.Adapter<
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dokterList.size
     }
 
 
