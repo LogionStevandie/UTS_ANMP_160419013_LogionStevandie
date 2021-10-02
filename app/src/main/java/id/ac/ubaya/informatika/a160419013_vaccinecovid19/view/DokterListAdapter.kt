@@ -7,10 +7,10 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Dokter
-import id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Info
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.util.loadImage
 import kotlinx.android.synthetic.main.dokter_list_item.view.*
 import kotlinx.android.synthetic.main.info_list_item.view.*
+
 
 class DokterListAdapter(val dokterList:ArrayList<Dokter>): RecyclerView.Adapter<DokterListAdapter.InfoViewHolder>()  {
     class InfoViewHolder(val view: View): RecyclerView.ViewHolder(view)
@@ -25,21 +25,19 @@ class DokterListAdapter(val dokterList:ArrayList<Dokter>): RecyclerView.Adapter<
         val inflater = LayoutInflater.from(parent.context)
         val v = inflater.inflate(R.layout.dokter_list_item, parent, false)
 
-        return DokterListAdapter.InfoViewHolder(v)
+        return InfoViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: InfoViewHolder, position: Int) {
-        with(holder.view){
-            txtIdDokter.text = dokterList[position].id
-            txtNamaDokter.text = dokterList[position].name
-            txtBidangDokter.text = dokterList[position].bidang
-            imageDokter.loadImage(dokterList[position].foto.toString(), progressBarGambarDokter)
-
-            btnChatDokter.setOnClickListener {
-                val id = holder.view.txtIdDokter.text.toString()
-                //val action = DokterLi.actionStudentDetail(id)
-                //Navigation.findNavController(it).navigate(action)
-            }
+        holder.view.txtIdDokter.text = dokterList[position].id
+        holder.view.txtNamaDokter.text = dokterList[position].name
+        holder.view.txtBidangDokter.text = dokterList[position].bidang
+        holder.view.imageDokterTele.loadImage(dokterList[position].foto.toString(), holder.view.progressBarGambarDokter)
+        holder.view.btnChatDokter.setOnClickListener {
+            val id = holder.view.txtIdDokter.text.toString()
+            val idKe = id.toInt()
+            val action = DoctorTeleFragmentDirections.actionDoctorTeleFragmentToDoctorTeleDetailFragment(idKe)
+            Navigation.findNavController(it).navigate(action)
         }
     }
 

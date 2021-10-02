@@ -64,6 +64,7 @@ class DoctorTeleFragment : Fragment() {
                 progressBarDokter.visibility = View.GONE
                 RecyclerViewDokter.visibility = View.VISIBLE
             }
+
         })
 
     }

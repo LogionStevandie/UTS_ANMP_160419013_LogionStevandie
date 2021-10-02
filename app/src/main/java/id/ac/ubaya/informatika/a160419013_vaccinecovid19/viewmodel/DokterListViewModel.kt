@@ -15,42 +15,42 @@ class DokterListViewModel(application: Application): AndroidViewModel(applicatio
             "1",
             "Charity MacEvilly",
             "McKesson Contract Packaging",
-            "http://dummyimage.com/242x100.png/5fa2dd/ffffff"
+            "https://media.istockphoto.com/photos/teenage-beauty-picture-id1126913832?k=20&m=1126913832&s=612x612&w=0&h=JQa7WVZhat9D5bsjdG7KeFnAAFtr1N2B8PDfNU99P3A="
         )
 
         val dokter2 = Dokter(
             "2",
             "Lodovico Bolwell",
             "Liberty Pharmaceuticals, Inc.",
-            "http://dummyimage.com/190x100.png/cc0000/ffffff"
+            "https://media.istockphoto.com/photos/portrait-of-a-taiwanese-man-picture-id1149504274?b=1&k=20&m=1149504274&s=170667a&w=0&h=eqYn6_MS4QcPqUkR7z_ovhivBZ1CXf0MeQrCP2s08bA="
         )
 
         val dokter3 = Dokter(
             "3",
             "Clark Muge",
             "CorePharma, LLC",
-            "http://dummyimage.com/141x100.png/dddddd/000000"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTr94TUcczwCauFVcTE6mh7yJJYu4HHjO6lQ&usqp=CAU"
         )
 
         val dokter4 = Dokter(
             "4",
             "Susanne Creboe",
             "Walgreens",
-            "http://dummyimage.com/125x100.png/ff4444/ffffff"
+            "https://media.istockphoto.com/photos/glowing-face-of-beautiful-girl-picture-id1134068203?k=20&m=1134068203&s=612x612&w=0&h=msbxCabBDak_j96xQX6r0FZbs2CDwwjD2RCKQUe_vWg="
         )
 
         val dokter5 = Dokter(
             "5",
             "Laura Sebring",
             "Navajo Manufacturing Company Inc.",
-            "http://dummyimage.com/105x100.png/ff4444/ffffff"
+            "https://cdn.shopify.com/s/files/1/1083/5260/products/Child_1024x1024.jpg?v=1587639925"
         )
 
         val dokter6 = Dokter(
             "6",
             "Matelda Fer",
             "Landy International",
-            "http://dummyimage.com/167x100.png/5fa2dd/ffffff"
+            "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?size=626&ext=jpg"
         )
 
 

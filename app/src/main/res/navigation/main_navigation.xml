@@ -32,12 +32,20 @@
         android:id="@+id/doctorTeleFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DoctorTeleFragment"
         android:label="fragment_doctor_tele"
-        tools:layout="@layout/fragment_doctor_tele" />
+        tools:layout="@layout/fragment_doctor_tele" >
+        <action
+            android:id="@+id/action_doctorTeleFragment_to_doctorTeleDetailFragment"
+            app:destination="@id/doctorTeleDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/infoFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.InfoFragment"
         android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_infoFragment_to_infoDetailFragment"
+            app:destination="@id/infoDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/itemProfile"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ProfileFragment"
@@ -89,4 +97,22 @@
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/infoDetailFragment"
+        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.InfoDetailFragment"
+        android:label="fragment_info_detail"
+        tools:layout="@layout/fragment_info_detail" >
+        <argument
+            android:name="datake"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorTeleDetailFragment"
+        android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DoctorTeleDetailFragment"
+        android:label="fragment_doctor_tele_detail"
+        tools:layout="@layout/fragment_doctor_tele_detail" >
+        <argument
+            android:name="datake"
+            app:argType="integer" />
+    </fragment>
 </navigation>

@@ -3,6 +3,7 @@ package id.ac.ubaya.informatika.a160419013_vaccinecovid19.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Info
@@ -29,6 +30,13 @@ class InfoListAdapter(val infoList:ArrayList<Info>): RecyclerView.Adapter<InfoLi
             txtIdInfo.text = infoList[position].id
             txtNamaInfo.text = infoList[position].name
             txtTanggalInfo.text = infoList[position].tanggal
+
+            cardViewInfo.setOnClickListener {
+                val id = holder.view.txtIdInfo.text.toString()
+                val idKe = id.toInt()
+                val action = InfoFragmentDirections.actionInfoFragmentToInfoDetailFragment(idKe)
+                Navigation.findNavController(it).navigate(action)
+            }
         }
     }
 
