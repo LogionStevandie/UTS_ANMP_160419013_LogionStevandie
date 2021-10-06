@@ -10,8 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.util.loadImage
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.viewmodel.DokterDetailViewModel
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_doctor_tele_detail.*
-import kotlinx.android.synthetic.main.fragment_info_detail.*
+import java.util.concurrent.TimeUnit
 
 class DoctorTeleDetailFragment : Fragment() {
     private lateinit var viewModel: DokterDetailViewModel
@@ -36,6 +39,14 @@ class DoctorTeleDetailFragment : Fragment() {
                 imageDokterDetail.loadImage(it.foto.toString(), progressBarDokterDetail)
             })
 
+        }
+        fabCallDokter.setOnClickListener {
+            Observable.timer(1, TimeUnit.SECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe{
+                    MainActivity.showNotification(txtNamaDokterDetail.text.toString(), "Dokter akan segera menelepon, Mohon tunggu beberapa saat.", R.drawable.ic_baseline_call_24)
+                }
         }
     }
 }

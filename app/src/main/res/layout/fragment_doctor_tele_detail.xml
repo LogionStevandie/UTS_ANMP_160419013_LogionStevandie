@@ -43,7 +43,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txtNamaDokterDetail" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/fabCallDokter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"

@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/itemHome"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="Home Vaccine And Covid19"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_digitalPasportFragment"
             app:destination="@id/digitalPasportFragment" />
@@ -26,13 +26,13 @@
     <fragment
         android:id="@+id/digitalPasportFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DigitalPasportFragment"
-        android:label="fragment_digital_pasport"
+        android:label="Digital Pasport"
         tools:layout="@layout/fragment_digital_pasport" />
     <fragment
         android:id="@+id/doctorTeleFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DoctorTeleFragment"
-        android:label="fragment_doctor_tele"
-        tools:layout="@layout/fragment_doctor_tele" >
+        android:label="Doctor Tele"
+        tools:layout="@layout/fragment_doctor_tele">
         <action
             android:id="@+id/action_doctorTeleFragment_to_doctorTeleDetailFragment"
             app:destination="@id/doctorTeleDetailFragment" />
@@ -40,8 +40,8 @@
     <fragment
         android:id="@+id/infoFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.InfoFragment"
-        android:label="fragment_info"
-        tools:layout="@layout/fragment_info" >
+        android:label="Info Vaccine And Covid19"
+        tools:layout="@layout/fragment_info">
         <action
             android:id="@+id/action_infoFragment_to_infoDetailFragment"
             app:destination="@id/infoDetailFragment" />
@@ -49,8 +49,8 @@
     <fragment
         android:id="@+id/itemProfile"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="Profile User"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/action_profileFragment_to_profileDetailFragment"
             app:destination="@id/profileDetailFragment" />
@@ -65,8 +65,8 @@
     <fragment
         android:id="@+id/profileDetailFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ProfileDetailFragment"
-        android:label="fragment_profile_detail"
-        tools:layout="@layout/fragment_profile_detail" >
+        android:label="Profile Detail User"
+        tools:layout="@layout/fragment_profile_detail">
         <action
             android:id="@+id/action_profileDetailFragment_to_itemProfile"
             app:destination="@id/itemProfile"
@@ -75,18 +75,18 @@
     <dialog
         android:id="@+id/QRCodeFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.QRCodeFragment"
-        android:label="fragment_q_r_code"
+        android:label="QR Code"
         tools:layout="@layout/fragment_q_r_code" />
     <fragment
         android:id="@+id/itemStats"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.StatistikFragment"
-        android:label="fragment_statistik"
+        android:label="Statistik Covid19"
         tools:layout="@layout/fragment_statistik" />
     <fragment
         android:id="@+id/vaccineFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.VaccineFragment"
-        android:label="fragment_vaccine"
-        tools:layout="@layout/fragment_vaccine" >
+        android:label="Vaccine Covid19"
+        tools:layout="@layout/fragment_vaccine">
         <action
             android:id="@+id/action_vaccineFragment_to_homeFragment"
             app:destination="@id/itemHome"
@@ -95,13 +95,13 @@
     <activity
         android:id="@+id/loginActivity"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.LoginActivity"
-        android:label="activity_login"
+        android:label="Login Vaccine And Covid19"
         tools:layout="@layout/activity_login" />
     <fragment
         android:id="@+id/infoDetailFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.InfoDetailFragment"
-        android:label="fragment_info_detail"
-        tools:layout="@layout/fragment_info_detail" >
+        android:label="Info Detail"
+        tools:layout="@layout/fragment_info_detail">
         <argument
             android:name="datake"
             app:argType="integer" />
@@ -109,8 +109,8 @@
     <fragment
         android:id="@+id/doctorTeleDetailFragment"
         android:name="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DoctorTeleDetailFragment"
-        android:label="fragment_doctor_tele_detail"
-        tools:layout="@layout/fragment_doctor_tele_detail" >
+        android:label="Info Docter"
+        tools:layout="@layout/fragment_doctor_tele_detail">
         <argument
             android:name="datake"
             app:argType="integer" />

@@ -51,4 +51,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+    //untuk langsung keluar
+    override fun onBackPressed() {
+        val intent = Intent(Intent.ACTION_MAIN)//akses home
+        intent.addCategory(Intent.CATEGORY_HOME)//menambah kategori home agar ketika di back langsung menuju home
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//menghapus history activity yang dibuka
+        startActivity(intent)
+    }
 }
