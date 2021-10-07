@@ -36,8 +36,9 @@ class ProfileFragment : Fragment() {
         }
 
         btnLogOut.setOnClickListener {
-            val action = ProfileFragmentDirections.actionItemProfileToLoginActivity()
+            val action = DoctorTeleDetailFragmentDirections.actionDoctorTeleDetailFragmentToItemHome()
             Navigation.findNavController(it).navigate(action)
         }
     }
+
 }

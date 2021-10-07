@@ -114,5 +114,9 @@
         <argument
             android:name="datake"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_doctorTeleDetailFragment_to_itemHome"
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome" />
     </fragment>
 </navigation>

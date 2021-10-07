@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.util.loadImage
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.viewmodel.DokterDetailViewModel
@@ -47,6 +48,11 @@ class DoctorTeleDetailFragment : Fragment() {
                 .subscribe{
                     MainActivity.showNotification(txtNamaDokterDetail.text.toString(), "Dokter akan segera menelepon, Mohon tunggu beberapa saat.", R.drawable.ic_baseline_call_24)
                 }
+        }
+
+        btnBackDoctorTele.setOnClickListener {
+            val action = DoctorTeleDetailFragmentDirections.actionDoctorTeleDetailFragmentToItemHome()
+            Navigation.findNavController(it).navigate(action)
         }
     }
 }
