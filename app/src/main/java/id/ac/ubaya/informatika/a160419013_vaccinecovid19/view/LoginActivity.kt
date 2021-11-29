@@ -13,7 +13,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        btnVerifikasi.setOnClickListener {
+
+        /*btnVerifikasi.setOnClickListener {
             if (txtNomorHp.text.toString() == ""){
                 AlertDialog.Builder(this)
                     .setTitle("Error")
@@ -49,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
-        }
+        }*/
     }
     //untuk langsung keluar
     override fun onBackPressed() {

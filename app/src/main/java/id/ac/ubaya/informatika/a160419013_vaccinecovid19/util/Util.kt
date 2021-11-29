@@ -8,10 +8,20 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.room.Room
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
+import id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.ProfileDatabase
 import java.lang.Exception
+
+val DB_NAME = "profile"
+
+fun buildDB(context: Context):ProfileDatabase{
+    val db = Room.databaseBuilder(context, ProfileDatabase::class.java, DB_NAME)
+        .build()
+    return db
+}
 
 fun ImageView.loadImage(url:String, progressBar: ProgressBar){
     Picasso.get()

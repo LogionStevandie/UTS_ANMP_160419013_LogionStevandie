@@ -2,4 +2,7 @@
     <string name="app_name">160419013_Vaccine&amp;Covid19</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="daftarkannomeranda">Daftarkan Nomer Anda</string>
+    <string name="daftarakun">Daftar Akun</string>
+    <string name="daftar">Daftar</string>
 </resources>
