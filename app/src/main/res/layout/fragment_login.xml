@@ -9,7 +9,10 @@
             type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Profile" />
         <variable
             name="login"
-            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ButtonLoginProfileListener" />
+            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ButtonVerificationProfileListener" />
+        <variable
+            name="daftar"
+            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ButtonGoToDaftarListener" />
     </data>
 <FrameLayout
     android:layout_width="match_parent"
@@ -50,6 +53,7 @@
                 android:id="@+id/txtLoginNomorHp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{profil.phoneNumber}"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +64,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Verifikasi"
-            android:onClick="@{login::onButtonLoginProfile}"
+            android:onClick="@{login.onButtonVerificationProfile}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
 
@@ -111,6 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:onClick="@{daftar::onButtonGoToDaftar}"
             android:text="@string/daftarkannomeranda"
             android:textSize="18sp"
             android:textStyle="italic"

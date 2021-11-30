@@ -6,6 +6,10 @@ interface ButtonAddProfileListener{
     fun onButtonAddProfile(v:View)
 }
 
-interface ButtonLoginProfileListener{
-    fun onButtonLoginProfile(v:View)
+interface ButtonVerificationProfileListener{
+    fun onButtonVerificationProfile(v:View)
+}
+
+interface ButtonGoToDaftarListener{
+    fun onButtonGoToDaftar(v:View)
 }

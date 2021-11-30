@@ -3,18 +3,23 @@ package id.ac.ubaya.informatika.a160419013_vaccinecovid19.view
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.databinding.FragmentLoginBinding
+import id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Profile
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
+import kotlin.math.log
 
-class LoginFragment : Fragment(), ButtonLoginProfileListener {
+class LoginFragment : Fragment(), ButtonVerificationProfileListener,ButtonGoToDaftarListener {
     private lateinit var viewModel: LoginViewModel
     private lateinit var dataBinding: FragmentLoginBinding
 
@@ -31,19 +36,46 @@ class LoginFragment : Fragment(), ButtonLoginProfileListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        observerViewModel()
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel.selectAll()
+        dataBinding.profil = Profile("","","","","","")
+        dataBinding.login = this
+        dataBinding.daftar = this
+
     }
 
-    fun observerViewModel(){
+    /*fun observerViewModel(){
         viewModel.profileLD.observe(viewLifecycleOwner, Observer {
             dataBinding.profil = it
 
         })
-    }
+    }*/
 
-    override fun onButtonLoginProfile(v: View) {
-        viewModel.login(txtLoginNomorHp.toString())
-        if(viewModel.profileLD.value != null){
+    override fun onButtonVerificationProfile(v: View) {
+        var dapat = false
+        for(item in viewModel.profileListLD.value!!){
+            if (item.phoneNumber == dataBinding.profil!!.phoneNumber){
+                AlertDialog.Builder(context)
+                    .setTitle("Berhasil")
+                    .setMessage("Kode Verifikasi: 123456")
+                    .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
+                    })
+                    .show()
+                dapat = true
+            }
+        }
+        if (!dapat){
+            AlertDialog.Builder(context)
+                .setTitle("Gagal")
+                .setMessage("Tolong Masukkan Nomor HP yang didaftarkan")
+                .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
+                })
+                .show()
+        }
+
+
+        //if(viewModel.profileListLD.value?.get(1)?.phoneNumber == "123")
+        /*if(viewModel.login(txtLoginNomorHp.toString()) != null){
             AlertDialog.Builder(context)
                 .setTitle("Berhasil")
                 .setMessage("Kode Verifikasi: 123456")
@@ -58,7 +90,12 @@ class LoginFragment : Fragment(), ButtonLoginProfileListener {
                 .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
                 })
                 .show()
-        }
+        }*/
+    }
+
+    override fun onButtonGoToDaftar(v: View) {
+        val action = LoginFragmentDirections.actionLoginFragmentToDaftarLoginFragment()
+        Navigation.findNavController(v).navigate(action)
     }
 
 }

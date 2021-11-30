@@ -7,6 +7,9 @@ interface ProfileDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(vararg profile: Profile)
 
+    @Query("SELECT * FROM profile")
+    suspend fun selectAllProfile():List<Profile>
+
     @Query("SELECT * FROM profile WHERE phoneNumber = :phoneNumber")
     suspend fun selectProfile(phoneNumber:String):Profile
 

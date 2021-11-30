@@ -14,7 +14,15 @@ import kotlin.coroutines.CoroutineContext
 
 class LoginViewModel(application: Application):AndroidViewModel(application),CoroutineScope {
     private var job = Job()
+    val profileListLD = MutableLiveData<List<Profile>>()
     val profileLD = MutableLiveData<Profile>()
+
+    fun selectAll(){
+        launch {
+            val db = buildDB(getApplication())
+            profileListLD.value = db.profileDao().selectAllProfile()
+        }
+    }
 
     fun login(nomorTelepon:String){
         launch {
