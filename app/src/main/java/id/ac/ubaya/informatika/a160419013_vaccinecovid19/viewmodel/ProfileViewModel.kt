@@ -11,22 +11,21 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class DaftarLoginViewModel (application: Application): AndroidViewModel(application), CoroutineScope {
+class ProfileViewModel (application: Application): AndroidViewModel(application), CoroutineScope {
     private var job = Job()
-    val profileListLD = MutableLiveData<List<Profile>>()
     val profileLD = MutableLiveData<Profile>()
 
-    fun selectAll(){
+    fun fetch(phoneNumber: String){
         launch {
             val db = buildDB(getApplication())
-            profileListLD.value = db.profileDao().selectAllProfile()
+            profileLD.value = db.profileDao().selectProfile(phoneNumber)
         }
     }
 
-    fun daftarProfile(profile: Profile){
+    fun deleteProfile(profile: Profile){
         launch {
             val db = buildDB(getApplication())
-            db.profileDao().insertAll(profile)
+            db.profileDao().deleteProfile(profile)
         }
     }
 

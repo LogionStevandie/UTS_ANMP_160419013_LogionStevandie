@@ -41,7 +41,9 @@ data class Profile(
     @ColumnInfo(name = "tanggal_lahir")
     var tanggal_lahir:String,
     @ColumnInfo(name = "email")
-    var email:String
+    var email:String,
+    @ColumnInfo(name = "kodeVerifikasi")
+    var kodeVerifikasi:String
 ) {
     @PrimaryKey(autoGenerate = true)
     var uuid:Int = 0

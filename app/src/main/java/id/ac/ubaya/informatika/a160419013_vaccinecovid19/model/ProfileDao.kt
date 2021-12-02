@@ -13,8 +13,8 @@ interface ProfileDao {
     @Query("SELECT * FROM profile WHERE phoneNumber = :phoneNumber")
     suspend fun selectProfile(phoneNumber:String):Profile
 
-    @Query("UPDATE profile SET name = :name, negara= :negara, nik=:nik, tanggal_lahir= :tanggal_lahir, email= :email WHERE uuid = :uuid")
-    suspend fun update(name: String, negara: String, nik: String, tanggal_lahir: String, email:String, uuid: Int)
+    @Query("UPDATE profile SET name = :name, negara= :negara, nik=:nik, tanggal_lahir= :tanggal_lahir, email= :email WHERE phoneNumber = :phoneNumber")
+    suspend fun update(name: String, negara: String, nik: String, tanggal_lahir: String, email:String, phoneNumber: String)
 
     @Delete
     suspend fun deleteProfile(profile: Profile)

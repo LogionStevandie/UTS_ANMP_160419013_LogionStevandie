@@ -59,4 +59,5 @@ class DetailInfoViewModel:ViewModel() {
         }
         infoLd.value = info
     }
+
 }

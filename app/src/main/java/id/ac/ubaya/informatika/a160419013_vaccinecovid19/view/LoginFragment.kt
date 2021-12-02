@@ -14,12 +14,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.R
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.databinding.FragmentLoginBinding
+import id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Global
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Profile
 import id.ac.ubaya.informatika.a160419013_vaccinecovid19.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlin.math.log
 
-class LoginFragment : Fragment(), ButtonVerificationProfileListener,ButtonGoToDaftarListener {
+class LoginFragment : Fragment(), ButtonVerificationProfileListener,ButtonGoToDaftarListener,ButtonGoToMainListener {
     private lateinit var viewModel: LoginViewModel
     private lateinit var dataBinding: FragmentLoginBinding
 
@@ -38,9 +39,10 @@ class LoginFragment : Fragment(), ButtonVerificationProfileListener,ButtonGoToDa
 
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         viewModel.selectAll()
-        dataBinding.profil = Profile("","","","","","")
-        dataBinding.login = this
+        dataBinding.profil = Profile("","","","","","","")
+        dataBinding.verif = this
         dataBinding.daftar = this
+        dataBinding.login = this
 
     }
 
@@ -57,10 +59,11 @@ class LoginFragment : Fragment(), ButtonVerificationProfileListener,ButtonGoToDa
             if (item.phoneNumber == dataBinding.profil!!.phoneNumber){
                 AlertDialog.Builder(context)
                     .setTitle("Berhasil")
-                    .setMessage("Kode Verifikasi: 123456")
+                    .setMessage("Kode Verifikasi: ${item.kodeVerifikasi}")
                     .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
                     })
                     .show()
+                Global.nomorHP = dataBinding.profil!!.phoneNumber
                 dapat = true
             }
         }
@@ -68,34 +71,43 @@ class LoginFragment : Fragment(), ButtonVerificationProfileListener,ButtonGoToDa
             AlertDialog.Builder(context)
                 .setTitle("Gagal")
                 .setMessage("Tolong Masukkan Nomor HP yang didaftarkan")
-                .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
+                .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtLoginNomorHp.requestFocus()
                 })
                 .show()
         }
-
-
-        //if(viewModel.profileListLD.value?.get(1)?.phoneNumber == "123")
-        /*if(viewModel.login(txtLoginNomorHp.toString()) != null){
-            AlertDialog.Builder(context)
-                .setTitle("Berhasil")
-                .setMessage("Kode Verifikasi: 123456")
-                .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
-                })
-                .show()
-        }
-        else{
-            AlertDialog.Builder(context)
-                .setTitle("Gagal")
-                .setMessage("Tolong Masukkan Nomor HP yang didaftarkan")
-                .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
-                })
-                .show()
-        }*/
     }
 
     override fun onButtonGoToDaftar(v: View) {
         val action = LoginFragmentDirections.actionLoginFragmentToDaftarLoginFragment()
         Navigation.findNavController(v).navigate(action)
+    }
+
+    override fun onButtonGoToMain(v: View) {
+        var dapat = false
+        for(item in viewModel.profileListLD.value!!){
+            if (item.kodeVerifikasi == dataBinding.profil!!.kodeVerifikasi && item.phoneNumber == dataBinding.profil!!.phoneNumber){
+                AlertDialog.Builder(context)
+                    .setTitle("Berhasil")
+                    .setMessage("Login Nomor dan Kode Verifikasi Berhasil")
+                    .setPositiveButton("OK", DialogInterface.OnClickListener
+                    { dialogInterface, i ->
+                        val action = LoginFragmentDirections.actionLoginFragmentToMainActivity()
+                        Navigation.findNavController(v).navigate(action)
+                    })
+                    .show()
+                Global.nomorHP = dataBinding.profil!!.phoneNumber
+                dapat = true
+            }
+        }
+        if (!dapat){
+            AlertDialog.Builder(context)
+                .setTitle("Gagal")
+                .setMessage("Tolong Masukkan Kode Verifikasi yang benar")
+                .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i -> txtKodeVerifikasi.requestFocus()
+                })
+                .show()
+        }
+
     }
 
 }

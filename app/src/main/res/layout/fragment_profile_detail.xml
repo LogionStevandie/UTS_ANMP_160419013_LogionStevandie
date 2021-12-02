@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="profil"
+            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Profile" />
+        <variable
+            name="edit"
+            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ButtonEditProfileListener" />
+    </data>
+<FrameLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ProfileDetailFragment">
@@ -30,7 +40,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtNegara"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@={profil.negara}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -49,7 +60,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtNama"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@={profil.name}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -69,7 +81,8 @@
                     android:id="@+id/txtNik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:text="@={profil.nik}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -89,7 +102,8 @@
                     android:id="@+id/txtTanggalLahir"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:text="@={profil.tanggal_lahir}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -109,7 +123,8 @@
                     android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:text="@={profil.email}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -129,7 +144,8 @@
                     android:id="@+id/txtNomorTelepon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:text="@={profil.phoneNumber}"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -140,6 +156,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:onClick="@{(view) -> edit.onButtonEditProfile(view,profil)}"
                 android:text="SIMPAN"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -159,3 +176,4 @@
     </ScrollView>
 
 </FrameLayout>
+</layout>
