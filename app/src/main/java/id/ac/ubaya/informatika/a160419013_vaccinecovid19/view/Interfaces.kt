@@ -37,3 +37,25 @@ interface ButtonDeleteProfileListener{
 interface ButtonKeluarAkunListener{
     fun onButtonKeluarAkun(v:View)
 }
+
+//Home
+interface ButtonHomePendaftaranListener{
+    fun onButtonHomePendaftaran(v:View)
+}
+interface ButtonHomePasporDigitalListener{
+    fun onButtonHomePasporDigital(v:View)
+}
+interface ButtonHomeInfoPentingListener{
+    fun onButtonHomeInfoPenting(v:View)
+}
+interface ButtonHomeTeleDokterListener{
+    fun onButtonHomeTeleDokter(v:View)
+}
+
+//Vaccine
+interface ButtonVaccineCheckListener{
+    fun onButtonVaccineCheck(v:View)
+}
+interface ButtonVaccineConfirmListener{
+    fun onButtonVaccineConfirm(v:View)
+}

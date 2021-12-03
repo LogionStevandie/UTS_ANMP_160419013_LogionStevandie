@@ -16,17 +16,17 @@ class CityHomeListViewModel(application: Application): AndroidViewModel(applicat
     val loadingHomeLD = MutableLiveData<Boolean>()
 
     fun refresh(){
-        val city1 = City("1","Xiongchi","Tinggi","578","82","394","386")
+        val city1 = City("1","Xiongchi","Resiko Tinggi","578","82","394","386")
 
-        val city2 = City("2","Lawrenceville","Sedang","153","794","611","819")
+        val city2 = City("2","Lawrenceville","Resiko Sedang","153","794","611","819")
 
-        val city3 = City("3","Charikar","Tinggi","863","146","519","516")
+        val city3 = City("3","Charikar","Resiko Tinggi","863","146","519","516")
 
-        val city4 = City("4","Putina","Tinggi","65","889","821","475")
+        val city4 = City("4","Putina","Resiko Tinggi","65","889","821","475")
 
         val city5 = City("5","Kīsh","Aman","519","289","954","451")
 
-        val city6 = City("6","Staryy Sambor","Rendah","274","992","780","921")
+        val city6 = City("6","Staryy Sambor","Resiko Rendah","274","992","780","921")
 
         cityHomeLD.value = arrayListOf<City>(city1, city2, city3, city4, city5, city6)
         loadingErrorHomeLD.value = false
