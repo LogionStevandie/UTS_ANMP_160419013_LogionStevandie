@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="info"
+            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.model.Info" />
+    </data>
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.InfoDetailFragment">
@@ -21,7 +28,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="Text Nama Judul Info"
+                android:text="@{info.name}"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -33,7 +40,7 @@
                 android:id="@+id/txtTanggalInfoDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00/00/0000"
+                android:text="@{info.tanggal}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtNameInfoDetail" />
@@ -45,7 +52,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="64dp"
                 android:layout_marginEnd="16dp"
-                android:text="TextView"
+                android:text="@{info.isi}"
                 android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,3 +61,4 @@
     </ScrollView>
 
 </FrameLayout>
+</layout>

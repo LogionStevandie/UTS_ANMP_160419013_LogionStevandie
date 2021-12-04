@@ -59,3 +59,8 @@ interface ButtonVaccineCheckListener{
 interface ButtonVaccineConfirmListener{
     fun onButtonVaccineConfirm(v:View)
 }
+
+//Info
+interface ButtonGotoInfoDetailListener{
+    fun onButtonGotoInfoDetail(v:View)
+}
