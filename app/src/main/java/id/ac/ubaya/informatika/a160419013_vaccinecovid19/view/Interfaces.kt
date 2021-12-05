@@ -64,3 +64,14 @@ interface ButtonVaccineConfirmListener{
 interface ButtonGotoInfoDetailListener{
     fun onButtonGotoInfoDetail(v:View)
 }
+
+//dokter
+interface ButtonChatDokterListener{
+    fun onButtonChatDokter(v:View)
+}
+interface ButtonCallDokterListener{
+    fun onButtonCallDokter(v: View)
+}
+interface ButtonDetailDokterBachHomeListener{
+    fun onButtonDetailDokterBachHome(v:View)
+}

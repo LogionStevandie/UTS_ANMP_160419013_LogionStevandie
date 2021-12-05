@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.databinding.BindingAdapter
 import androidx.room.Room
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
@@ -48,6 +49,11 @@ fun ImageView.loadImage(url:String, progressBar: ProgressBar){
             }
 
         })
+}
+
+@BindingAdapter("android:imageUrl", "android:progressBar")
+fun loadPhotoUrl(v:ImageView, url:String, pb:ProgressBar){
+    if(url != "") v.loadImage(url,pb)
 }
 
 fun createNotificationChannel(context: Context, importance:Int, showBadge:Boolean, name:String, description:String) {
