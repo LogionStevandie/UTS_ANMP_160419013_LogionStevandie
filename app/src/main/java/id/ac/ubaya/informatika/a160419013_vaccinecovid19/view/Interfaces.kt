@@ -75,3 +75,8 @@ interface ButtonCallDokterListener{
 interface ButtonDetailDokterBachHomeListener{
     fun onButtonDetailDokterBachHome(v:View)
 }
+
+//qrcode
+interface ButtonFinishQrCodeListener{
+    fun onButtonFinishQrCodeListener(v:View)
+}

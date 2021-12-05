@@ -83,7 +83,7 @@ class DoctorTeleDetailFragment : Fragment(), ButtonCallDokterListener, ButtonDet
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe{
-                MainActivity.showNotification(dataBinding.dokter.name!!, "Dokter akan segera menelepon, Mohon tunggu beberapa saat.", R.drawable.ic_baseline_call_24)
+                MainActivity.showNotification(dataBinding.dokter!!.name.toString(), "Dokter akan segera menelepon, Mohon tunggu beberapa saat.", R.drawable.ic_baseline_call_24)
             }
     }
 
