@@ -80,3 +80,7 @@ interface ButtonDetailDokterBachHomeListener{
 interface ButtonFinishQrCodeListener{
     fun onButtonFinishQrCodeListener(v:View)
 }
+
+interface DateClickListener{
+    fun onDateClick(v:View)
+}

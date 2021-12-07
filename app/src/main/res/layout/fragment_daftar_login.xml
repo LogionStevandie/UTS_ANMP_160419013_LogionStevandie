@@ -10,6 +10,9 @@
         <variable
             name="add"
             type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ButtonAddProfileListener" />
+        <variable
+            name="date"
+            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.DateClickListener" />
     </data>
 <FrameLayout
     android:layout_width="match_parent"
@@ -129,6 +132,9 @@
                 android:id="@+id/txtDaftarTanggalLahir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:enabled="true"
+                android:focusable="false"
+                android:onClick="@{date::onDateClick}"
                 android:text="@={profil.tanggal_lahir}" />
         </com.google.android.material.textfield.TextInputLayout>
 
