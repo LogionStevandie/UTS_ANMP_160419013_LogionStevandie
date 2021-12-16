@@ -25,7 +25,8 @@ data class Dokter(
     val id:String?,
     val name:String?,
     val bidang:String?,
-    val foto:String?
+    val foto:String?,
+    val nomorHp:String?
 )
 
 @Entity(tableName = "profile")

@@ -75,6 +75,9 @@ interface ButtonCallDokterListener{
 interface ButtonDetailDokterBachHomeListener{
     fun onButtonDetailDokterBachHome(v:View)
 }
+interface ButtonChatWhatsAppDokterListener{
+    fun onButtonChatWhatsAppDokter(v:View)
+}
 
 //qrcode
 interface ButtonFinishQrCodeListener{

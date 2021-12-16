@@ -1,5 +1,7 @@
 package id.ac.ubaya.informatika.a160419013_vaccinecovid19.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,7 +21,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_doctor_tele_detail.*
 import java.util.concurrent.TimeUnit
 
-class DoctorTeleDetailFragment : Fragment(), ButtonCallDokterListener, ButtonDetailDokterBachHomeListener {
+class DoctorTeleDetailFragment : Fragment(), ButtonCallDokterListener, ButtonDetailDokterBachHomeListener, ButtonChatWhatsAppDokterListener {
     private lateinit var viewModel: DokterDetailViewModel
     private lateinit var dataBinding: FragmentDoctorTeleDetailBinding
 
@@ -42,6 +44,8 @@ class DoctorTeleDetailFragment : Fragment(), ButtonCallDokterListener, ButtonDet
 
         dataBinding.call = this
         dataBinding.back = this
+        dataBinding.chatDokter = this
+
 
         /*if (arguments != null){
             val idKe = DoctorTeleDetailFragmentArgs.fromBundle(requireArguments()).datake
@@ -90,5 +94,18 @@ class DoctorTeleDetailFragment : Fragment(), ButtonCallDokterListener, ButtonDet
     override fun onButtonDetailDokterBachHome(v: View) {
         val action = DoctorTeleDetailFragmentDirections.actionDoctorTeleDetailFragmentToItemHome()
         Navigation.findNavController(v).navigate(action)
+    }
+
+    override fun onButtonChatWhatsAppDokter(v: View) {
+        val sendIntent = Intent().apply {
+            action = Intent.ACTION_VIEW
+            //putExtra(Intent.EXTRA_TEXT, editPesan.text.toString())
+            //type = "text/plain"
+            //`package` = "com.whatsapp"
+            data = Uri.parse("https://api.whatsapp.com/send?phone=${v.tag}")
+        }
+        //Buat share intent
+        val shareIntent = Intent.createChooser(sendIntent, "Kirim pesan menggunakan")
+        startActivity(shareIntent)
     }
 }

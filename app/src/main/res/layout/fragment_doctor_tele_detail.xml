@@ -12,7 +12,9 @@
         <variable
             name="back"
             type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ButtonDetailDokterBachHomeListener" />
-
+        <variable
+            name="chatDokter"
+            type="id.ac.ubaya.informatika.a160419013_vaccinecovid19.view.ButtonChatWhatsAppDokterListener" />
     </data>
 <FrameLayout
     android:layout_width="match_parent"
@@ -61,13 +63,13 @@
             android:id="@+id/fabCallDokter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="96dp"
             android:layout_marginBottom="32dp"
             android:clickable="true"
-            android:src="@drawable/ic_baseline_call_24"
             android:onClick="@{call::onButtonCallDokter}"
+            android:src="@drawable/ic_baseline_call_24"
             app:layout_constraintBottom_toTopOf="@+id/btnBackDoctorTele"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ProgressBar
@@ -93,6 +95,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabChatWaDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="96dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:tag="@{dokter.nomorHp}"
+            android:onClick="@{chatDokter::onButtonChatWhatsAppDokter}"
+            app:layout_constraintBottom_toTopOf="@+id/btnBackDoctorTele"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_chat_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
 </layout>
