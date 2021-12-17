@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:text="@={profil.name}"
+            android:text="@{profil.name}"
             android:textAllCaps="true"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="@={profil.phoneNumber}"
+            android:text="@{profil.phoneNumber}"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/txtNamaAkun" />
 

@@ -108,7 +108,6 @@
                     android:layout_height="wrap_content"
                     android:enabled="true"
                     android:focusable="false"
-                    android:inputType="date"
                     android:onClick="@{date::onDateClick}"
                     android:text="@={profil.tanggal_lahir}" />
             </com.google.android.material.textfield.TextInputLayout>

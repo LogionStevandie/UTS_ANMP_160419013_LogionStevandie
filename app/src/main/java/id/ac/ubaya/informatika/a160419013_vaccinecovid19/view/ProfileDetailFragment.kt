@@ -51,7 +51,7 @@ class ProfileDetailFragment : Fragment(), ButtonEditProfileListener, DateClickLi
         viewModel.fetch(Global.nomorHP)
 
         dataBinding.edit = this
-
+        dataBinding.date = this
         /*btnSave.setOnClickListener {
             val action = ProfileDetailFragmentDirections.actionProfileDetailFragmentToItemProfile()
             Navigation.findNavController(it).navigate(action)
